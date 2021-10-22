@@ -10,7 +10,7 @@ module relojes_est(clk4f_out_e, clk2f_out_e, clk_out_e, clk32f, rst);
   (* src = "relojes_est.v:12" *)
   wire _02_;
   (* src = "relojes_est.v:12" *)
-  wire [5:0] _03_;
+  wire [6:0] _03_;
   wire _04_;
   wire _05_;
   wire _06_;
@@ -40,9 +40,6 @@ module relojes_est(clk4f_out_e, clk2f_out_e, clk_out_e, clk32f, rst);
   wire _30_;
   wire _31_;
   wire _32_;
-  wire _33_;
-  wire _34_;
-  wire _35_;
   (* src = "relojes_est.v:4" *)
   output clk2f_out_e;
   (* src = "relojes_est.v:6" *)
@@ -51,252 +48,216 @@ module relojes_est(clk4f_out_e, clk2f_out_e, clk_out_e, clk32f, rst);
   output clk4f_out_e;
   (* src = "relojes_est.v:4" *)
   output clk_out_e;
-  (* init = 6'b000000 *)
   (* src = "relojes_est.v:11" *)
-  wire [5:0] cont;
+  wire [6:0] cont;
   (* src = "relojes_est.v:7" *)
   input rst;
-  NOT _36_ (
+  NOR _33_ (
     .A(cont[0]),
+    .B(rst),
     .Y(_03_[0])
   );
-  NOT _37_ (
-    .A(cont[1]),
+  NOT _34_ (
+    .A(cont[0]),
     .Y(_04_)
   );
-  NOR _38_ (
-    .A(_04_),
-    .B(_03_[0]),
+  NOT _35_ (
+    .A(cont[1]),
     .Y(_05_)
   );
-  NOR _39_ (
-    .A(cont[1]),
-    .B(cont[0]),
+  NOR _36_ (
+    .A(_05_),
+    .B(_04_),
     .Y(_06_)
   );
-  NOR _40_ (
-    .A(_06_),
-    .B(_05_),
-    .Y(_03_[1])
-  );
-  NOT _41_ (
-    .A(cont[2]),
+  NOT _37_ (
+    .A(rst),
     .Y(_07_)
   );
-  NAND _42_ (
+  NOR _38_ (
     .A(cont[1]),
     .B(cont[0]),
     .Y(_08_)
   );
-  NOR _43_ (
+  NOT _39_ (
     .A(_08_),
-    .B(_07_),
     .Y(_09_)
   );
-  NOR _44_ (
-    .A(_05_),
-    .B(cont[2]),
+  NAND _40_ (
+    .A(_09_),
+    .B(_07_),
     .Y(_10_)
   );
-  NOR _45_ (
+  NOR _41_ (
     .A(_10_),
-    .B(_09_),
-    .Y(_03_[2])
+    .B(_06_),
+    .Y(_03_[1])
   );
-  NOT _46_ (
-    .A(cont[3]),
+  NOT _42_ (
+    .A(cont[2]),
     .Y(_11_)
   );
-  NAND _47_ (
-    .A(_05_),
-    .B(cont[2]),
+  NAND _43_ (
+    .A(cont[1]),
+    .B(cont[0]),
     .Y(_12_)
   );
-  NOR _48_ (
+  NOR _44_ (
     .A(_12_),
     .B(_11_),
     .Y(_13_)
   );
-  NOR _49_ (
-    .A(_09_),
-    .B(cont[3]),
+  NAND _45_ (
+    .A(_12_),
+    .B(_11_),
     .Y(_14_)
   );
-  NOR _50_ (
+  NAND _46_ (
     .A(_14_),
-    .B(_13_),
-    .Y(_03_[3])
-  );
-  NAND _51_ (
-    .A(_13_),
-    .B(cont[4]),
+    .B(_07_),
     .Y(_15_)
   );
-  NOT _52_ (
+  NOR _47_ (
     .A(_15_),
+    .B(_13_),
+    .Y(_03_[2])
+  );
+  NOT _48_ (
+    .A(cont[3]),
     .Y(_16_)
   );
-  NOR _53_ (
+  NOR _49_ (
     .A(_13_),
-    .B(cont[4]),
+    .B(_16_),
     .Y(_17_)
   );
-  NOR _54_ (
-    .A(_17_),
-    .B(_16_),
-    .Y(_03_[4])
-  );
-  NAND _55_ (
-    .A(_15_),
-    .B(cont[5]),
+  NAND _50_ (
+    .A(_06_),
+    .B(cont[2]),
     .Y(_18_)
   );
-  NOR _56_ (
-    .A(_15_),
-    .B(cont[5]),
+  NOR _51_ (
+    .A(_18_),
+    .B(cont[3]),
     .Y(_19_)
   );
-  NAND _57_ (
+  NOR _52_ (
     .A(_19_),
-    .B(rst),
+    .B(_17_),
     .Y(_20_)
   );
-  NAND _58_ (
+  NOR _53_ (
     .A(_20_),
-    .B(_18_),
-    .Y(_03_[5])
+    .B(rst),
+    .Y(_03_[3])
   );
-  NOT _59_ (
-    .A(clk_out_e),
+  NAND _54_ (
+    .A(_08_),
+    .B(_11_),
     .Y(_21_)
   );
-  NAND _60_ (
-    .A(_09_),
+  NOR _55_ (
+    .A(_21_),
     .B(cont[3]),
     .Y(_22_)
   );
-  NOR _61_ (
+  NOR _56_ (
     .A(_22_),
-    .B(cont[5]),
+    .B(clk_out_e),
     .Y(_23_)
   );
-  NAND _62_ (
-    .A(_23_),
-    .B(cont[4]),
+  NAND _57_ (
+    .A(_22_),
+    .B(clk_out_e),
     .Y(_24_)
   );
-  NOR _63_ (
+  NAND _58_ (
     .A(_24_),
-    .B(_21_),
+    .B(_07_),
     .Y(_25_)
   );
-  NOT _64_ (
-    .A(rst),
+  NOR _59_ (
+    .A(_25_),
+    .B(_23_),
+    .Y(_02_)
+  );
+  NOT _60_ (
+    .A(clk2f_out_e),
     .Y(_26_)
   );
-  NAND _65_ (
-    .A(_24_),
-    .B(_21_),
+  NOR _61_ (
+    .A(_21_),
+    .B(_26_),
     .Y(_27_)
   );
-  NAND _66_ (
-    .A(_27_),
+  NAND _62_ (
+    .A(_21_),
     .B(_26_),
     .Y(_28_)
   );
-  NOR _67_ (
+  NAND _63_ (
     .A(_28_),
-    .B(_25_),
-    .Y(_02_)
-  );
-  NOR _68_ (
-    .A(_23_),
-    .B(clk2f_out_e),
+    .B(_07_),
     .Y(_29_)
   );
-  NAND _69_ (
-    .A(_23_),
-    .B(clk2f_out_e),
-    .Y(_30_)
-  );
-  NAND _70_ (
-    .A(_30_),
-    .B(_26_),
-    .Y(_31_)
-  );
-  NOR _71_ (
-    .A(_31_),
-    .B(_29_),
+  NOR _64_ (
+    .A(_29_),
+    .B(_27_),
     .Y(_00_)
   );
-  NOR _72_ (
+  NOR _65_ (
     .A(_08_),
-    .B(cont[5]),
+    .B(clk4f_out_e),
+    .Y(_30_)
+  );
+  NAND _66_ (
+    .A(_08_),
+    .B(clk4f_out_e),
+    .Y(_31_)
+  );
+  NAND _67_ (
+    .A(_31_),
+    .B(_07_),
     .Y(_32_)
   );
-  NOR _73_ (
+  NOR _68_ (
     .A(_32_),
-    .B(clk4f_out_e),
-    .Y(_33_)
-  );
-  NAND _74_ (
-    .A(_32_),
-    .B(clk4f_out_e),
-    .Y(_34_)
-  );
-  NAND _75_ (
-    .A(_34_),
-    .B(_26_),
-    .Y(_35_)
-  );
-  NOR _76_ (
-    .A(_35_),
-    .B(_33_),
+    .B(_30_),
     .Y(_01_)
   );
-  DFF _77_ (
+  DFF _69_ (
     .C(clk32f),
     .D(_01_),
     .Q(clk4f_out_e)
   );
-  DFF _78_ (
+  DFF _70_ (
     .C(clk32f),
     .D(_00_),
     .Q(clk2f_out_e)
   );
-  DFF _79_ (
+  DFF _71_ (
     .C(clk32f),
     .D(_02_),
     .Q(clk_out_e)
   );
-  DFF _80_ (
+  DFF _72_ (
     .C(clk32f),
     .D(_03_[0]),
     .Q(cont[0])
   );
-  DFF _81_ (
+  DFF _73_ (
     .C(clk32f),
     .D(_03_[1]),
     .Q(cont[1])
   );
-  DFF _82_ (
+  DFF _74_ (
     .C(clk32f),
     .D(_03_[2]),
     .Q(cont[2])
   );
-  DFF _83_ (
+  DFF _75_ (
     .C(clk32f),
     .D(_03_[3]),
     .Q(cont[3])
-  );
-  DFF _84_ (
-    .C(clk32f),
-    .D(_03_[4]),
-    .Q(cont[4])
-  );
-  DFF _85_ (
-    .C(clk32f),
-    .D(_03_[5]),
-    .Q(cont[5])
   );
 endmodule

@@ -8,31 +8,34 @@ module relojes(
 	
 );
 	
-	reg [5:0]cont = 5'b0;
+	reg [6:0]cont; //= 5'b0;
 	always @(posedge clk32f) begin
 		cont <= cont+1;
 		if(rst) begin
 			clk_out_c <= 0;
 			clk2f_out_c <= 0;
 			clk4f_out_c <= 0;
-			 
+			cont <= 0;
+	 
 		end
 		else begin 
-			if(cont==5'b11 || cont==5'b111 || cont==5'b1011 || cont == 5'b10011 || cont == 5'b10111 || cont == 5'b11011) begin
-			clk4f_out_c <= ~clk4f_out_c;
-			end
-			if(cont == 5'b1111) begin
-				clk2f_out_c <= ~clk2f_out_c;
+			if(cont%4==0) begin
 				clk4f_out_c <= ~clk4f_out_c;
-			end
-			else
-			if(cont==5'b11111) begin
-				cont <= 5'b0;
-				clk_out_c <= ~clk_out_c;
-				clk4f_out_c <= ~clk4f_out_c;
-				clk2f_out_c <= ~clk2f_out_c;
+				if(cont%8== 0)begin
+					clk2f_out_c <= ~clk2f_out_c;
+					if(cont%16 == 0)begin
+						clk_out_c <= ~clk_out_c;
+					end
+					else begin
+					end
+				end
+				else begin
+				end
 				
 			end
+			else begin
+			end
+
 		end
 	end
 	

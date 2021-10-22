@@ -23,6 +23,7 @@ module probador(
 			@(posedge clk4f_out_c);	
 			a <= 0;
 			$finish;
+			
 	end
 initial	a <= 5;
 initial rst <= 1;
