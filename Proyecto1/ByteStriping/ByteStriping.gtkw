@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed Oct  6 16:46:23 2021
+[*]
+[dumpfile] "/home/lacriux/Digitales2/ByteStriping/verificacion_byteStriping.vcd"
+[dumpfile_mtime] "Wed Oct  6 16:45:41 2021"
+[dumpfile_size] 60828
+[savefile] "/home/lacriux/Digitales2/ByteStriping/ByteStriping.gtkw"
+[timestart] 0
+[size] 1366 705
+[pos] -165 -165
+*-7.000000 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 192
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 194
+@28
+BancoPruebas.clk
+@22
+BancoPruebas.data_in[31:0]
+@28
+BancoPruebas.valid_in
+@22
+BancoPruebas.lane_0[31:0]
+@28
+BancoPruebas.valid_0
+@22
+BancoPruebas.lane_0_sintetizado[31:0]
+@28
+BancoPruebas.valid_0_sintetizado
+@22
+BancoPruebas.lane_1[31:0]
+@28
+BancoPruebas.valid_1
+@22
+BancoPruebas.lane_1_sintetizado[31:0]
+@29
+BancoPruebas.valid_1_sintetizado
+[pattern_trace] 1
+[pattern_trace] 0

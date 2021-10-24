@@ -1,0 +1,22 @@
+read_verilog phy.v
+hierarchy -check -top phy
+
+proc; opt; 
+
+
+techmap; opt; fsm; opt; memory; opt
+
+
+techmap; opt
+
+
+# mapea ffs de la biblioyeca cmos_cell
+dfflibmap -liberty cmos_cells.lib
+
+#mapea compuertas logicas de la biblioteca  cmos_cells.lib
+abc -liberty  cmos_cells.lib
+
+#cleanup
+clean
+
+write_verilog phy_sintetizado.v

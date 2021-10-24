@@ -1,0 +1,6 @@
+	sed -i 's/serialParalelo/serialParalelo_sintetizado/g' $(TEMP0)
+	sed -i 's/paso8bto32b/paso8bto32b_sintetizado/g' $(TEMP0)
+	sed -i 's/byteUnstriping/byteUnstriping_sintetizado/g' $(TEMP0)
+	sed -i 's/paraleloSerial/paraleloSerial_sintetizado/g' $(TEMP0)
+	sed -i 's/paso32bto8b/paso32bto8b_sintetizado/g' $(TEMP0)
+	sed -i 's/byteStriping/byteStriping_sintetizado/g' $(TEMP0)
